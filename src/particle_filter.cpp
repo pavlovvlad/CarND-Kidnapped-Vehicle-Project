@@ -64,7 +64,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
 	// create normal distribution for position and orientation of particles
     normal_distribution<double> dist_x(0, std_pos[0]);
     normal_distribution<double> dist_y(0, std_pos[1]);
-    normal_distribution<double> dist_theta(0, std[2]);
+    normal_distribution<double> dist_theta(0, std_pos[2]);
     
     // predict the states with the CTRV model
     for (int i = 0; i < particles.size(); ++i) {
